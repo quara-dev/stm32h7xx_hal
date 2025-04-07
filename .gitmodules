@@ -7,3 +7,6 @@
 [submodule "CrashCatcher"]
 	path = CrashCatcher
 	url = https://github.com/quara-dev/CrashCatcher.git
+[submodule "cmsis_core"]
+	path = cmsis_core
+	url = https://github.com/STMicroelectronics/cmsis_core
