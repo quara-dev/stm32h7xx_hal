@@ -13,8 +13,9 @@ cmsis_device_inc = include_directories(
 )
 
 # build_c_flags_hal = '-DSTM32H725xx'
-
-message('cmsis_device: @0@'.format(target_mcu))
+manipulate_target_mcu = target_mcu.to_upper()
+new_target_mcu = manipulate_target_mcu.replace('XX', 'xx')
+message('cmsis_device: @0@'.format(new_target_mcu))
 
 
 # create HAL lib
