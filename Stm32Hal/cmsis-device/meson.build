@@ -37,7 +37,7 @@ lib_cmsis_h7 = static_library(
 )
 
 # create dependencies
-lib_cmsis_h7_dep = declare_dependency(
+cmsis_h7_dep = declare_dependency(
     include_directories: [
         cmsis_device_inc,
     ],
