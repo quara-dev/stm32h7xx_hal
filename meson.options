@@ -1,0 +1,527 @@
+
+option('MCU_VDD',
+    type : 'integer',
+    min : 1500, max : 5000,
+    value : 3300,
+    description : 'mcu VDD value')
+
+option('MCU_HSE_VALUE',
+    type : 'integer',
+    min : 0, max : 48000000,
+    value : 25000000,
+    yield: true,
+    description : 'Value of the External oscillator in Hz: default 25MHz')
+
+option('MCU_HSI_VALUE',
+    type : 'integer',
+    min : 0, max : 88000000,
+    value : 64000000,
+    yield: true,
+    description : 'Value of the Internal oscillator in Hz: default 64MHz')
+
+option('MCU_CSI_VALUE',
+    type : 'integer',
+    min : 0, max : 48000000,
+    value : 4000000,
+    yield: true,
+    description : 'Value of the Internal oscillator in Hz: default 4MHz')
+
+option('MCU_LSE_VALUE',
+    type : 'integer',
+    min : 0, max : 48000000,
+    value : 32768,
+    yield: true,
+    description : 'Value of the External Low Speed oscillator in Hz: default 25MHz')
+
+option('MCU_LSI_VALUE',
+    type : 'integer',
+    min : 0, max : 48000000,
+    value : 32000,
+    yield: true,
+    description : 'Value of the Low Internal Speed oscillator in Hz: default 25MHz')
+
+option('MCU_VECT_TAB_OFFSET',
+    type : 'integer',
+    min : 0, max : 524288,
+    value : 131072,
+    yield: true,
+    description : 'vector table offset value. Default: 0x20000 (128kB)'
+)
+    
+option(
+    'MCU_FAMILY',
+    type: 'combo',
+    choices : [ 'STM32H743xx',
+                'STM32H753xx',
+                'STM32H750xx',
+                'STM32H742xx',
+                'STM32H745xx',
+                'STM32H745xG',
+                'STM32H755xx',
+                'STM32H747xx',
+                'STM32H747xG',
+                'STM32H757xx',
+                'STM32H7B0xx',
+                'STM32H7B0xxQ',
+                'STM32H7A3xx',
+                'STM32H7B3xx',
+                'STM32H7A3xxQ',
+                'STM32H7B3xxQ',
+                'STM32H735xx',
+                'STM32H733xx',
+                'STM32H730xx',
+                'STM32H730xxQ',
+                'STM32H725xx',
+                'STM32H723xx',
+], 
+    value : 'STM32H725xx',
+    yield: true,
+    description: 'CPU family of STM32H7 (default: STM32H725xx)',
+)
+
+option(
+    'NO_MPU',
+    type: 'boolean',
+    value: true,
+    yield: true,
+    description: 'Disable MPU code (default: disabled)',
+)
+
+option(
+    'ENALBLE_ADC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'ADC peripheral (default: disabled)',
+)
+option(
+    'ENABLE_CEC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'CEC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_COMP',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'COMP peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_CORDIC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'CORDIC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_ADC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'ADC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_CRC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'CRC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_CRYP',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'CRYP peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_DAC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'DAC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_DCMI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'DCMI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_DFSDM',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'DFSDM peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_DMA2D',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'DMA2D peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_DTS',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'DTS peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_DSI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'DSI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_ETH',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'ETH peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_EXTI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'EXTI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_FDCAN',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'FDCAN peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_GFXMMU',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'GFXMMU peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_FMAC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'FMAC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_HASH',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'HASH peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_HCD',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'HCD peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_HRTIM',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'HRTIM peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_I2C',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'I2C peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_I2S',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'I2S peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_IRDA',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'IRDA peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_IWDG',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'IWDG peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_JPEG',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'JPEG peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_LPTIM',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'LPTIM peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_LTDC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'LTDC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_MDIOS',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'MDIOS peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_MMC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'MMC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_NAND',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'NAND peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_NOR',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'NOR peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_OPAMP',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'OPAMP peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_OSPI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'OSPI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_OTFDEC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'OTFDEC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_PCD',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'PCD peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_PSSI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'PSSI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_QSPI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'QSPI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_RAMECC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'RAMECC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_RNG',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'RNG peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_RTC',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'RTC peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SAI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SAI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SD',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SD peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SDIO',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SDIO peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SDRAM',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SDRAM peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SMARTCARD',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SMARTCARD peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SMBUS',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SMBUS peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SPDIFRX',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SPDIFRX peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SPI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SPI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SRAM',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SRAM peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_SWPMI',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'SWPMI peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_TIM',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'TIM peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_UART',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'UART peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_USART',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'USART peripheral (default: disabled)',
+)
+
+option(
+    'ENABLE_WWDG',
+    type: 'boolean',
+    value: false,
+    yield: true,
+    description: 'WWDG peripheral (default: disabled)',
+)
