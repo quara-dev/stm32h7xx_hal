@@ -1,12 +1,11 @@
 
-target = get_option('MCU_FAMILY')
-if target.contains('STM32')
-        target = target.to_lower()
-        message('including @0@ startup files'.format(target))
+if target_mcu.contains('STM32')
+        target_mcu = target_mcu.to_lower()
+        message('including @0@ startup files'.format(target_mcu))
         # collect sources to compile
         cmsis_device_src =files(
                 'system_stm32h7xx_singlecore.c',
-                'Source/Templates/gcc/startup_@0@.s'.format(target),
+                'gcc/startup_@0@.s'.format(target_mcu),
         )
 endif
 cmsis_device_inc = include_directories(
@@ -15,10 +14,7 @@ cmsis_device_inc = include_directories(
 
 # build_c_flags_hal = '-DSTM32H725xx'
 
-message('cmsis_device: @0@'.format(target))
-
-
-cmsis_core_dep = dependency('cmsis_core', required: true)
+message('cmsis_device: @0@'.format(target_mcu))
 
 
 # create HAL lib

@@ -1,3 +1,7 @@
+
+subdir('helper')
+subdir('cmsis-device')
+
 setmod = import('sourceset')
 fs = import('fs')
 stm32_h7_ss = setmod.source_set()
