@@ -4,3 +4,6 @@
 [submodule "stm-cmsis"]
 	path = stm-cmsis
 	url = https://github.com/STMicroelectronics/cmsis-device-h7.git
+[submodule "CrashCatcher"]
+	path = CrashCatcher
+	url = https://github.com/quara-dev/CrashCatcher.git
