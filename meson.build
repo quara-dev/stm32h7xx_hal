@@ -13,7 +13,6 @@ project(
     version: 'v1.11.5',
     meson_version: '>=1.3.0',
     license: 'MIT',
-    default_library: 'static',
 )
 
 assert(
