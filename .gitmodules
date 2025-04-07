@@ -1,0 +1,6 @@
+[submodule "stm-hal"]
+	path = stm-hal
+	url = https://github.com/STMicroelectronics/stm32h7xx-hal-driver.git
+[submodule "stm-cmsis"]
+	path = stm-cmsis
+	url = https://github.com/STMicroelectronics/cmsis-device-h7.git
