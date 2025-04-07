@@ -62,7 +62,15 @@ target_mcu = get_option('MCU_FAMILY')
 subdir('Stm32Hal')
 
 
-build_c_flags_hal = ['-DSTM32H725xx', '-DUSE_HAL_DRIVER', '-DUSE_FULL_LL_DRIVER']
+build_c_flags_hal += [ '-DUSE_HAL_DRIVER', '-DUSE_FULL_LL_DRIVER']
+
+
+configure_file(
+    input: 'config/stm32h7xx_hal_conf.h.in',
+    output: 'stm32h7xx_hal_conf.h',
+    configuration: stm32h7_hal_config,
+)
+
 
 # create HAL lib
 libstm32hal = static_library(

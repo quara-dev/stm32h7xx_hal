@@ -139,10 +139,3 @@ stm32h7_hal_config.set('CSI_VALUE', get_option('MCU_CSI_VALUE'))
 stm32h7_hal_config.set('LSE_VALUE', get_option('MCU_LSE_VALUE'))
 stm32h7_hal_config.set('LSI_VALUE', get_option('MCU_LSI_VALUE'))
 
-
-configure_file(
-    input: 'config/stm32h7xx_hal_conf.h.in',
-    output: 'stm32h7xx_hal_conf.h',
-    configuration: stm32h7_hal_config,
-)
-
