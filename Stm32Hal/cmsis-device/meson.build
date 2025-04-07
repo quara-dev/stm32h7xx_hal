@@ -16,9 +16,8 @@ manipulate_target_mcu = target_mcu.to_upper()
 new_target_mcu = manipulate_target_mcu.replace('XX', 'xx')
 message('cmsis_device: @0@'.format(new_target_mcu))
 
-c_flag_prefix = '-D'
-build_c_flags_hal = []
-build_c_flags_hal += c_flag_prefix.join(new_target_mcu)
+build_c_flags_hal = ['-D'+new_target_mcu]
+
 
 
 # create HAL lib
