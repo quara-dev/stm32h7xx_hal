@@ -71,6 +71,8 @@ configure_file(
     configuration: stm32h7_hal_config,
 )
 
+stm32h7xx_config_include = include_directories('config')
+
 
 # create HAL lib
 libstm32hal = static_library(
@@ -79,7 +81,8 @@ libstm32hal = static_library(
         stm32_h7_ss.all_sources()
     ],
     include_directories: [
-        stm32h7xx_hal_driver_include
+        stm32h7xx_hal_driver_include,
+        stm32h7xx_config_include
     ],
     dependencies: [
         cmsis_h7_dep,
@@ -92,6 +95,7 @@ libstm32hal = static_library(
 libstm32hal_dep = declare_dependency(
     include_directories: [
         stm32h7xx_hal_driver_include,
+        stm32h7xx_config_include
     ],
     dependencies: [
         cmsis_h7_dep,        
