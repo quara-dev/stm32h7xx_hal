@@ -71,7 +71,7 @@ configure_file(
     configuration: stm32h7_hal_config,
 )
 
-stm32h7xx_config_include = include_directories('config')
+stm32h7xx_config_include = include_directories('.')
 
 
 # create HAL lib
